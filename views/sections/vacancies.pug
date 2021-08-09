@@ -1,0 +1,30 @@
+section.vacancies
+  .title 
+    .container.container_narrow
+      .content
+        h2 Вакансії
+        a.btn.btn-light.btn--with-icon_left(href='#' role='button')
+          i.fa.fa-cog
+          span Налаштування
+            em &nbsp;фільтрів
+    
+  .content
+    .container.container_narrow
+      +list-links--with-counter&attributes({
+        listClass: ['tabs'],
+        listItemClass: ['tabs-item'],
+        listItemLinkClass: ['tabs-link'],
+        listLinks: [{name: 'За вашим профілем', link: '#', counter: '7', active: 'active'},{name: 'Разработка', link: '#', counter: '2', active: ''},{name: 'Большая ЗП - Remote', link: '#', counter: '23', active: ''}]})
+      
+    .list
+      include ../components/vacancies/vacancie--v--03
+    
+    .container.container_narrow
+      .list--footer
+        a.btn.btn-light.btn--with-icon_left(href='#' role='button')
+          i.fa.fa-paper-plane
+          span Telegram Bot
+          
+        a.btn.btn-primary.btn--with-icon_right(href='#' role='button')
+          span Всі вакансії
+          i.fa.fa-chevron-right

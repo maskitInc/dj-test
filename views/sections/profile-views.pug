@@ -1,0 +1,20 @@
+section.profile-views
+  .title 
+    h4 Перегляди профілю за 30 днів
+    
+  .content
+    .list
+    
+      - var hrs = [{name: 'Cristofer Vetrovs', nameAbr: 'CV', position: 'IT Recruiter at Inforce', messageReceived: 'false', photoExist: 'true', photo: 'images/photos/HR/1.png', date: '7 серпня 2021р.'}, {name: 'Madelyn Kenter', nameAbr: 'MK', position: 'Recruiter at FirstFive', messageReceived: 'true', photoExist: 'false', photo: '', date: '7 серпня 2021р.'}, {name: 'Lincoln Baptista', nameAbr: 'LB', position: 'IT recruiter at Playtech', messageReceived: 'false', photoExist: 'true', photo: 'images/photos/HR/2.png', date: '7 серпня 2021р.'}, {name: 'Anika Philips', nameAbr: 'AP', position: 'Recruiter at FirstFive', messageReceived: 'true', photoExist: 'true', photo: 'images/photos/HR/3.png', date: '6 серпня 2021р.'}, {name: 'Leo Westervelt', nameAbr: 'LW', position: 'Talent Sourcing Specialist at Innovecs', messageReceived: 'true', photoExist: 'false', photo: '', date: '6 серпня 2021р.'}, {name: 'Skylar Lipshutz', nameAbr: 'SL', position: 'HR assistant at additiv', messageReceived: 'true', photoExist: 'true', photo: 'images/photos/HR/4.png', date: '6 серпня 2021р.'}, {name: 'Wilson Mango', nameAbr: 'WM', position: 'HR assistant at additiv', messageReceived: 'true', photoExist: 'false', photo: '', date: '6 серпня 2021р.'}, {name: 'Jocelyn Mango', nameAbr: 'JM', position: 'IT Recruiter at Onseo', messageReceived: 'false', photoExist: 'false', photo: '', date: '6 серпня 2021р.'}, {name: 'Lydia Rhiel Madsen', nameAbr: 'LRM', position: 'Talent Sourcing Specialist at Innovecs', messageReceived: 'true', photoExist: 'true', photo: 'images/photos/HR/5.png', date: '5 серпня 2021р.'}, {name: 'Gustavo Baptista', nameAbr: 'GB', position: 'IT Recruiter at Onseo', messageReceived: 'false', photoExist: 'true', photo: 'images/photos/HR/6.png', date: '5 серпня 2021р.'}, {name: 'Mira Philips', nameAbr: 'MP', position: 'Office Coordinator at Digital Connect', messageReceived: 'false', photoExist: 'false', photo: '', date: '5 серпня 2021р.'}, {name: 'Alfredo Lipshutz', nameAbr: 'AL', position: 'IT Рекрутер at SQRD Tech', messageReceived: 'true', photoExist: 'false', photo: '', date: '5 серпня 2021р.'}, {name: 'Cooper Botosh', nameAbr: 'CB', position: 'Talent Delivery Specialist at Intellias', messageReceived: 'true', photoExist: 'false', photo: '', date: '5 серпня 2021р.'}, {name: 'Lincoln Culhane', nameAbr: 'MK', position: 'Office Coordinator at Digital Connect', messageReceived: 'false', photoExist: 'true', photo: 'images/photos/HR/7.png', date: '4 серпня 2021р.'}, {name: 'Adison Baptista', nameAbr: 'AB', position: 'IT Рекрутер at SQRD Tech', messageReceived: 'false', photoExist: 'true', photo: 'images/photos/HR/8.png', date: '4 серпня 2021р.'}, {name: 'Hanna Baptista', nameAbr: 'HB', position: 'Talent Delivery Specialist at Intellias', messageReceived: 'false', photoExist: 'false', photo: '', date: '4 серпня 2021р.'}];
+
+      each hr in hrs    
+        +person--hr&attributes({
+          personMessage: hr.messageReceived,
+          personStyle: 'person_vertical',
+          photoExist: hr.photoExist,
+          personPhoto: hr.photo,
+          personName: hr.name,
+          personNameAbr: hr.nameAbr,
+          personPosition: hr.position,
+          personDate: hr.date
+        })

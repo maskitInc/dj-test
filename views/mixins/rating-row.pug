@@ -1,0 +1,8 @@
+// for Rating table row creation
+mixin rating-table-row
+  each item in attributes.candidates
+    tr
+      th.col-index(scope='row') #{item.index}
+      td.col-candidate
+        a(href='#') #{item.candidate}
+      td.col-rating #{item.candidateRating}

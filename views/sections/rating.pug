@@ -1,0 +1,26 @@
+section.rating
+  .title 
+    .container.container_narrow
+      .content
+        h2 Рейтинг за кількістю пропозицій
+        .items-set
+          select.form-select.form-select-sm
+            option(selected='') Дизайнери / UI / UX
+            option(value='1') One
+            option(value='2') Two
+            option(value='3') Three
+            
+          select.form-select.form-select-sm
+            option(selected='') Remote work
+            option(value='1') One
+            option(value='2') Two
+            option(value='3') Three
+
+  .container.container_narrow
+    .content
+      include ../components/rating/table
+      
+      .rating--footer
+        p
+          b Ваше місце у рейтингу: 45 з 2425
+        p Рейтинг рахується за кількістю отриманих пропозицій від роботодавців за останні 30 днів.

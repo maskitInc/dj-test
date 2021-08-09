@@ -1,0 +1,24 @@
+// for Simple list creation
+mixin list-links--simple
+  ul&attributes({'class': attributes.listClass})
+    each item in attributes.listLinks
+      li&attributes({'class': attributes.listItemClass})
+        a&attributes({'class': attributes.listItemLinkClass, 'href': item.link})
+          span #{item.name}
+
+// Tabs component
+mixin list-links--with-counter
+  ul&attributes({'class': attributes.listClass})
+    each item in attributes.listLinks
+      li&attributes({'class': attributes.listItemClass + ' ' + item.active})
+        a&attributes({'class': attributes.listItemLinkClass, 'href': item.link})
+          span #{item.name}
+          i #{item.counter}
+
+// create Media item
+mixin media-item
+  .d-flex
+    .flex-shrink-0
+      img(src='...' alt='...')
+    .flex-grow-1.ms-3
+      | This is some content from a media component. You can replace this with any content and adjust it as needed.

@@ -1,0 +1,10 @@
+table.table
+  thead
+    tr
+      th(scope='col') 
+      th(scope='col') ТОП-10 профілів
+      th.text-align_right(scope='col') Пропозицій
+  tbody
+    +rating-table-row&attributes({
+      candidates: [{index: '1', candidate: 'Product Designer, Senior UX/UI, CX Designer, Design Lead $4000', candidateRating: '27'}, {index: '2', candidate: 'Senior Product & UX designer $3000', candidateRating: '26'}, {index: '3', candidate: 'Designer UI/UX $2000', candidateRating: '26'}, {index: '4', candidate: 'UI/UX DESIGNER $3000', candidateRating: '26'}, {index: '5', candidate: 'Senior Product & UX Designer $3000', candidateRating: '25'}, {index: '6', candidate: 'Lead UI/UX Designer $3700', candidateRating: '24'}, {index: '7', candidate: 'UX/UI Designer $2000', candidateRating: '20'}, {index: '8', candidate: 'UI/UX DESIGNER $2500', candidateRating: '15'}, {index: '9', candidate: 'UI/UX дизайнер $1700', candidateRating: '4'}, {index: '10', candidate: 'Senior UX/UI Designer $2000', candidateRating: '4'}]
+    })

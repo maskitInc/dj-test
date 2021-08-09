@@ -1,0 +1,38 @@
+// create Profile info
+mixin person--candidate
+  .person.person_candidate&attributes({'class': ' ' + attributes.personStyle})
+    .person-photo
+      .person-photo--container
+      
+        if attributes.personPhoto != Null
+          img.person-photo--image&attributes({'src': attributes.personPhoto, 'alt': attributes.personNameAbr})
+        else
+          span.person-photo--placeholder #{attributes.personNameAbr}
+          
+    .person-info 
+      .person-info--name #{attributes.personName}
+      .person-info--email #{attributes.personEmail}
+
+
+// create HR info
+mixin person--hr
+  .person.person_hr&attributes({'class': ' ' + attributes.personStyle})
+    .person-photo
+      .person-photo--container
+      
+        if attributes.photoExist == 'true'
+          img.person-photo--image&attributes({'src': attributes.personPhoto, 'alt': attributes.personNameAbr})
+        else
+          span.person-photo--placeholder #{attributes.personNameAbr}
+          
+      if attributes.personMessage == 'true'
+        .person-message
+          i.fa.fa-envelope
+          
+    .person-info 
+      .person-info--name 
+        a(href='#') #{attributes.personName}
+      .person-info--position #{attributes.personPosition}
+      
+      if attributes.personDate != Null
+        .person-info--date #{attributes.personDate}
