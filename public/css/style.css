@@ -652,7 +652,11 @@ p {
   .vacancie .content {
     position: relative;
     display: flex;
+    flex-direction: column;
     padding: 20px 0 24px; }
+    @media screen and (min-width: 768px) {
+      .vacancie .content {
+        flex-direction: row; } }
     .vacancie .content:after {
       content: '';
       position: absolute;
@@ -662,12 +666,29 @@ p {
       height: 1px;
       background: #F0F5F9; }
   .vacancie--hr {
-    margin-right: 24px;
-    flex-shrink: 0;
-    width: 25%; }
+    margin-top: 12px;
+    order: 1; }
+    @media screen and (min-width: 768px) {
+      .vacancie--hr {
+        margin-top: 0;
+        margin-right: 24px;
+        flex-shrink: 0;
+        order: 0;
+        width: 25%; } }
+    @media screen and (max-width: 767px) {
+      .vacancie--hr .person_hr .person-photo--container {
+        width: 36px;
+        height: 36px; } }
+    @media screen and (max-width: 767px) {
+      .vacancie--hr .person_hr .person-info--name {
+        margin-bottom: 0; } }
   .vacancie--info {
     cursor: pointer;
-    flex-grow: 1; }
+    flex-grow: 1;
+    order: 0; }
+    @media screen and (min-width: 768px) {
+      .vacancie--info {
+        order: 1; } }
     .vacancie--info ul {
       padding: 0;
       display: flex;

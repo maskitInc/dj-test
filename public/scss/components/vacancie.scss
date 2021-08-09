@@ -6,7 +6,12 @@
   .content {
     position: relative;
     display: flex;   
+    flex-direction: column;
     padding: $indent_l 0 $indent_xl;
+    
+    @media #{$tablet-avg-and-up} { 
+      flex-direction: row;
+    }
      
     &:after {
       content: '';
@@ -20,14 +25,42 @@
   }
   
   &--hr {
-    margin-right: $indent_xl;
-    flex-shrink: 0;
-    width: 25%;
+    margin-top: $indent_s;
+    order: 1;
+    
+    @media #{$tablet-avg-and-up} { 
+      margin-top: 0;
+      margin-right: $indent_xl;
+      flex-shrink: 0;
+      order: 0;
+      width: 25%;
+    }
+    
+    .person_hr {
+      .person-photo--container {
+        @media #{$tablet-below-avg} {
+          width: 36px;
+          height: 36px;  
+        }
+      }
+      
+      .person-info--name {
+        @media #{$tablet-below-avg} {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
   }
   
   &--info {
     cursor: pointer;
-    flex-grow: 1;
+    flex-grow: 1;    
+    order: 0;
+    
+    @media #{$tablet-avg-and-up} { 
+      order: 1;
+    }
     
     ul {
       padding: 0;
