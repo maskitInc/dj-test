@@ -1,0 +1,12 @@
+.icon--star-orange {
+  @include circle($icon-size_l);
+  background: $gradient--icon_orange;
+  box-shadow: $shadow--icon_orange;
+    
+  &:before {
+    position: relative;
+    color: $white;
+    font-size: $font_size--base - 1;
+    text-shadow: $text-shadow--icon;
+  }
+}

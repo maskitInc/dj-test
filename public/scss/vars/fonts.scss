@@ -1,0 +1,80 @@
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+$font-family: 'HelveticaNeue', Arial, sans-serif;
+
+
+// Font base
+
+$font-size: 16px !default;
+$line-height--px: 24px !default;
+$font-color: $color--dark-gray-primary !default;
+
+
+// Font sizes
+
+$font_size--xxxxxl: $font-size + 32; // 48
+$font_size--xxxxl: $font-size + 20; // 36
+$font_size--xxxl: $font-size + 14; // 30
+$font_size--xxl: $font-size + 12; // 28
+$font_size--xl: $font-size + 8; // 24
+$font_size--l: $font-size + 4; // 20
+$font_size--m: $font-size + 2; // 18
+$font_size--base: $font-size; // 16
+$font_size--s: $font-size - 2; // 14
+$font_size--xs: $font-size - 4; // 12
+$font_size--xxs: $font-size - 6; // 10
+
+
+// Line heights
+
+$line-height_xxxl: $line-height--px + 40; // 64
+$line-height_xxl: $line-height--px + 36; // 60
+$line-height_xl: $line-height--px + 24; // 48
+$line-height_l: $line-height--px + 16; // 40
+$line-height_m: $line-height--px + 8; // 32
+$line-height_base: $line-height--px; // 24
+$line-height_s: $line-height--px - 4; // 20
+$line-height_xs: $line-height--px - 6; // 18
+$line-height_xxs: $line-height--px - 8; // 16
+
+
+// Typography
+
+// h1
+$font_size--h1--desktop: $font_size--xxxxxl;
+$font_size--h1--mobile: $font_size--xxxxl;
+
+// h2
+$font_size--h2--desktop: $font_size--xxxxl;
+$font_size--h2--mobile: $font_size--xxl;
+
+// h3
+$font_size--h3--desktop: $font_size--xxxl;
+$font_size--h3--mobile: $font_size--xl;
+
+// h4
+$font_size--h4--desktop: $font_size--m;
+$font_size--h4--mobile: $font_size--base;
+
+// h5
+$font_size--h5--desktop: $font_size--s;
+$font_size--h5--mobile: $font_size--xs;
+
+// h6
+$font_size--h6--desktop: $font_size--xs;
+$font_size--h6--mobile: $font_size--xxs;
+
+// p
+$font_size--p--desktop: $font_size--base;
+$font_size--p--mobile: $font_size--s;
+
+
+// Font weight
+
+$font-weight_normal: 500;
+$font-weight_semi: 700;
+$font-weight_bold: 900;
+
+// Customisation
+
+$font_body: $font_size--base;

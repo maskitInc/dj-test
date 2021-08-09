@@ -1,0 +1,85 @@
+@import 'placeholders/fonts';
+@import 'placeholders/decor';
+
+%reset-indent {
+  margin: 0;
+  padding: 0;
+}
+
+%reset-list {
+  @extend %reset-indent;
+  list-style-type: none;
+}
+
+%stretch {
+  &-full {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &-horizontal {
+    left: 0;
+    right: 0;
+  }
+
+  &-vertical {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+%card-bg {
+  &_shadow {
+    background: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow--small;   
+  }
+  
+  &_border {
+    background: $white;
+    border-radius: $border-radius;
+    border: $border-small;
+  }
+}
+
+%horizontal-scroll {
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 $indent_xl; 
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+%horizontal-list {
+  padding: 0;
+  max-width: none;
+  height: auto;  
+}
+
+%horizontal-list--container {    
+  margin: auto;
+  padding: $indent_xl $indent_s;
+  display: grid;
+  grid-auto-flow: column;  
+  width: 100%;  
+}
+
+%horizontal-scroll-slider {    
+  @extend %horizontal-scroll;
+  @extend %horizontal-list--container;
+}
+
+%card-in-slider {
+  scroll-snap-align: center; // start | center
+  scroll-snap-stop: always;
+}
+
+// %cards-in-list {
+//   &_4 {    
+//     max-width: calc(25% - 24px);
+//     flex-basis: calc(25% - 24px);
+//   }
+// }

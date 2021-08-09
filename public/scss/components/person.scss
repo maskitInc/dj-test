@@ -1,0 +1,158 @@
+.person {
+  $person: &;
+  
+  display: flex;
+  
+  &-photo {
+    position: relative;
+    
+    &--container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    &--image {
+      width: 100%;
+    }
+    
+    &--placeholder {
+      line-height: 1;
+      font-weight: bold;
+      color: $white;
+    }
+  }
+  
+  &-message {
+    @include circle($icon-size_l);     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    background: $color--blue-primary; 
+    border: 1px solid $color--dark-gray-shade-6;
+    box-shadow: 0 2px 12px -2px rgba(0,0,0,.5);
+    
+    i {
+      font-size: 8px;
+      color: $white;
+    }
+  }
+  
+  &-info {    
+    &--name {
+      font-size: $font_size--s;
+      font-weight: 600;
+      
+      a {
+        color: $color--light-blue-shade-1;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  &_candidate {
+    align-items: center;
+    
+    #{$person} {   
+      &-photo {       
+        margin-right: $indent_xs;
+         
+        &--container {          
+          @include circle($person-photo--avatar_sm);
+          background: $color--blue-primary;   
+        }
+        
+        &--placeholder {
+          font-size: $font_size--s;
+        }
+      }    
+      
+      &-info {
+        &--name,
+        &--email {   
+          line-height: 1;
+        }
+        
+        &--name {          
+          margin-bottom: $indent_xxs;
+        }
+        
+        &--email {
+          font-size: $font_size--xs;
+          color: $text-color--grey;
+        }
+      }      
+    }
+  }
+  
+  &_hr {
+    #{$person} {      
+      &-photo {
+        cursor: pointer;
+        
+        &--container {          
+          @include circle($person-photo--avatar_md); 
+          background: #fb4a92;
+        }    
+      
+        &--placeholder {
+          font-size: $font_size--m;
+        }
+      } 
+      
+      &-info {    
+        &--name {          
+          margin-bottom: $indent_xxxs;
+          line-height: $line-height_s;
+        }    
+        
+        &--position {
+          line-height: $line-height_xs;
+          font-size: $font_size--xs;
+          font-weight: 600;
+          color: $text-color--base;
+        }
+        
+        &--date {
+          margin-top: $indent_xs;
+          font-size: $font_size--xxs;
+          color: $text-color--lightgrey;
+        }
+      }
+    }
+  }
+  
+  &_vertical {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    &.person_hr {
+      .person {
+        &-photo {
+          margin-bottom: $indent_s;
+        } 
+      }
+    }
+  }
+  
+  &_horizontal {    
+    &.person_hr {
+      .person {
+        &-photo {
+          margin-right: $indent_s;
+        } 
+        
+        &-info {
+          &--name {            
+            margin-bottom: $indent_xxs;
+          }          
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+.notice {
+  $notice: &;
+  
+  margin: 0;
+  border-width: 0;  
+  
+  &-link {
+    text-decoration: none;   
+  }
+  
+  &-footer {    
+    display: flex;
+    align-items: center;
+  }
+  
+  &_promotion {
+    border-bottom: 1px solid $border-color_responsive-dark;
+    padding: $indent_xs 0;
+    background: $color--light-blue-shade-2;     
+    
+    .container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      
+      @media #{$phablet-avg-and-up}, #{$tablet-avg-and-up} {
+        max-width: none;
+      }
+      
+      @media #{$desktop-avg-and-up} {
+        max-width: 1320px;
+      }
+    }
+    
+    #{$notice}-content {
+      padding-right: $indent_xl;
+    }
+    
+    #{$notice}-message,
+    #{$notice}-link {
+      font-size: $font_size--s;
+      line-height: $line-height_s;
+    }
+    
+    #{$notice}-message {
+      margin-right: $indent_xs;
+      color: $notice-text-color;
+    }
+    
+    #{$notice}-link {
+      text-decoration: none;   
+      color: $notice-link-color; 
+    }
+    
+    #{$notice}-close {
+      $btn-size: 24px;
+      
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+      position: absolute;
+      top: 0;
+      right: $btn-size / 2;
+      width: $btn-size;
+      height: $btn-size;    
+      
+      i {      
+        color: fade-out(rgba($notice-link-color, 1), .5);  
+        transition: $transition;    
+      }
+      
+      &:hover {
+        i {        
+          color: fade-out(rgba($notice-link-color, 1), 0); 
+          transition: $transition;
+        }
+      }
+    }
+   
+  }
+  
+  &_infoblock {
+    margin: $indent_s 0;
+    border-top: 1px solid $border-color_primary;
+    border-bottom: 1px solid $border-color_primary;
+    padding: $indent_l 0;
+    background: $color--light-gray-shade-1;   
+    
+    @media #{$laptop-avg-and-up} { 
+      margin-bottom: $indent_xl;
+    }
+    
+    #{$notice}-message {
+      margin-bottom: $indent_xl;
+      
+      h3 {
+        margin-bottom: $indent_s;
+      }
+    }
+  }
+}

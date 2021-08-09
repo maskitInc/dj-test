@@ -1,0 +1,69 @@
+// Borders
+
+$border-radius--xsmall: 4px;
+$border-radius--small: 6px;
+$border-radius: 8px;
+$border-radius--big: 12px;
+
+$border-radius--blob--discount: 60% 40% 40% 60% / 60% 45% 55% 40%;
+$border-radius--blob--btn: 40px 40px 40px 40px / 35px 35px 35px 35px;
+
+$border-size--small: 1px;
+$border-size--big: 3px;
+
+$border-small: $border-size--small solid $border-color_primary;
+$border-small_light: $border-size--small solid $color--dark-gray-shade-6;
+$border-small_light-gray: $border-size--small solid $border-color_secondary;
+$border-small_light-blue: $border-size--small solid $color--light-gray-shade-3;
+
+$border-brutal: $border-size--big solid $color--dark-gray-primary;
+$border-brutal--white: $border-size--big solid $white;
+
+$border-radius--bottom--big: 0 0 $border-radius--big $border-radius--big;
+
+
+// Shadows
+
+$shadow-color--dark: fade-out($black, 0.8);
+
+$shadow-size--small: 0 6px 12px -3px;
+$shadow-size--big: 0 12px 24px 0;
+
+$shadow--small: $shadow-size--small $shadow-color--dark;
+$shadow--big: $shadow-size--big $shadow-color--dark;
+
+$shadow--icon_orange: 0px 1px 4px rgba(0, 0, 0, 0.1), 0px 2px 6px rgba(251, 187, 151, 0.25);
+
+// Text Shadows
+
+$text-shadow--font-size_xl: 0 2px 12px rgba(0, 0, 0, 0.15);
+$text-shadow--icon: 0px 1px 4px rgba(0, 0, 0, 0.05);
+
+
+// Transitions
+
+$transition: all .3s ease;
+$transition-time-ease: .3s ease;
+
+
+// Transforms
+
+$transform--show: translateY(0%) translateZ(0);
+$transform--hide--top: translateY(-120%) translateZ(0);
+$transform--hide--bottom: translateY(120%) translateZ(0);
+
+// Backdrop-filter
+
+$backdrop-filter: 20px;
+
+
+// Logos
+
+$logo--size_s: url("../logos/android-chrome-96x96.png");
+$logo--size_m: url("../logos/zakon-online--logo_mobile.svg");
+$logo--size_l: url("../logos/zakon-online--logo_desktop.svg");
+
+
+// Icons
+
+$icon--arrow-down: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%200%209%20L%204.5%204.5%20L%200%200%22%20transform%3D%22translate(5.75%203.75)%20rotate(90%202.25%204.5)%22%20fill%3D%22transparent%22%20stroke-width%3D%222%22%20stroke%3D%22rgb(136%2C%20136%2C%20136)%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fsvg%3E");

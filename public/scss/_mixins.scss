@@ -1,0 +1,95 @@
+// Helper for creating responsive card sizes in horizontal slider
+@mixin card-sizes-in-slider($mobile-xs, $mobile, $phablet, $tablet, $desktop) {
+  max-width: $mobile-xs;
+  flex: 0 0 $mobile-xs;
+  
+  @media #{$mobile-avg-and-up} {
+    max-width: $mobile;
+    flex: 0 0 $mobile;
+  }
+  
+  @media #{$phablet-avg-and-up} {
+    max-width: $phablet;
+    flex: 0 0 $phablet;
+  }
+  
+  @media #{$tablet-avg-and-up} {
+    max-width: $tablet;
+    flex: 0 0 $tablet;
+  }
+  
+  @media #{$desktop-avg-and-up} {
+    max-width: $desktop;
+    flex: 0 0 $desktop;
+  }
+}
+
+// Helper for creating responsive card sizes in wrapped list
+@mixin card-sizes-in-wrapped-list(
+  $size_mobile-xs: false,
+  $indent_mobile-xs: false,
+  $size_mobile: false,
+  $indent_mobile: false,
+  $size_phablet: false,
+  $indent_phablet: false,
+  $size_tablet: false,
+  $indent_tablet: false,
+  $size_desktop: false,
+  $indent_desktop: false) {  
+    
+  @if $size_mobile-xs {
+    $width_mobile-xs: calc(#{$size_mobile-xs} - #{$indent_mobile-xs});
+    max-width: $width_mobile-xs;
+    flex: 0 0 $width_mobile-xs;    
+  }
+  
+  @if $size_mobile {
+    @media #{$mobile-avg-and-up} {
+      $width_mobile: calc(#{$size_mobile} - #{$indent_mobile});
+      max-width: $width_mobile;
+      flex: 0 0 $width_mobile;
+    }    
+  }
+  
+  @if $size_phablet {
+    @media #{$phablet-avg-and-up} {
+      $width_phablet: calc(#{$size_phablet} - #{$indent_phablet});
+      max-width: $width_phablet;
+      flex: 0 0 $width_phablet;
+    }    
+  }  
+  
+  @if $size_tablet {
+    @media #{$tablet-avg-and-up} {
+      $width_tablet: calc(#{$size_tablet} - #{$indent_tablet});
+      max-width: $width_tablet;
+      flex: 0 0 $width_tablet;
+    }    
+  }
+  
+  @if $size_desktop {
+    @media #{$desktop-avg-and-up} {
+      $width_desktop: calc(#{$size_desktop} - #{$indent_desktop});
+      max-width: $width_desktop;
+      flex: 0 0 $width_desktop;
+    }    
+  }
+}
+
+
+@mixin card-indents-in-list($cards-in-row, $indent-right, $indent-bottom) {
+  margin-right: $indent-right;
+  margin-bottom: $indent-bottom;
+  
+  &:nth-child(#{$cards-in-row}n) {
+    margin-right: 0;
+  }  
+}
+
+
+@mixin circle($size) {
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  overflow: hidden;
+}

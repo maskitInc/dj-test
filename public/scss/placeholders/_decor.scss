@@ -1,0 +1,36 @@
+%bg--gradient_blue {    
+  background: $color--blue-primary;
+  background-image: $gradient--intro-content;  
+}
+
+%intro-decor {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25%;
+    bottom: 180px;
+    right: 0;
+    width: 150%;
+    height: 720px;
+    margin: auto;
+    border-radius: 50%;
+    
+    @media #{$phablet-avg-and-up} {
+      bottom: 290px;
+      height: 500px;
+    }
+  
+    @media #{$desktop-avg-and-up} {
+      bottom: 250px;
+    }    
+  }
+}
+
+%intro-decor--gradient_blue {
+  @extend %intro-decor;
+  
+  &:after {
+    @extend %bg--gradient_blue;  
+  }
+}

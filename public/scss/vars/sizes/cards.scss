@@ -1,0 +1,34 @@
+// Cards
+
+// Wrapped list
+
+$cards-in-list--5: 20%;
+$cards-in-list--4: 25%;
+$cards-in-list--3: 33.33334%;
+$cards-in-list--2: 50%;
+$cards-in-list--1: 100%;
+
+// Horizontal slider
+
+$card-width--5: calc(#{$cards-in-list--5} - 19px);
+$card-width--5--avg-and-up: calc(#{$cards-in-list--5} - 26px);
+
+$card-width--4: calc(#{$cards-in-list--4} - 20px);
+$card-width--4--avg-and-up: calc(#{$cards-in-list--4} - 26px);
+$card-width--4--avg-and-up--full: calc(#{$cards-in-list--4} - 18px);
+
+$card-width--3: calc(#{$cards-in-list--3} - 21px);
+$card-width--3--avg-and-up: calc(#{$cards-in-list--3} - 27px);
+$card-width--3--avg-and-up--full: calc(#{$cards-in-list--3} - 16px);
+
+$card-width--2: calc(#{$cards-in-list--2} - 23px);
+$card-width--1: calc(#{$cards-in-list--1} - 32px);
+
+// // the number implies the number of items displayed on the screen
+// $card_size_: (
+//   1: $cards-in-list--1,
+//   2: $cards-in-list--2,
+//   3: $cards-in-list--3,
+//   4: $cards-in-list--4,
+//   5: $cards-in-list--5
+// );

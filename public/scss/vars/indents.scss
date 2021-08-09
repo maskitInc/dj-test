@@ -1,0 +1,46 @@
+// Indentation sizes
+$indent_xxxs: 2px;
+$indent_xxs: 4px;
+$indent_xs: 8px;
+$indent_s: 12px;
+$indent_m: 16px;
+$indent_l: 20px;
+$indent_xl: 24px;
+$indent_xxl: 28px;
+$indent_xxxl: 36px;
+$indent_xxxxl: 48px;
+$indent_xxxxxl: 60px;
+$indent_xxxxxxl: 72px;
+
+// Indent sizes that may be around content
+$indent_list: (
+  'xxs': $indent_xs,
+  'xs': $indent_s,
+  's': $indent_m,
+  'm': $indent_l,
+  'l': $indent_xxxl,
+);
+
+
+// How to use:
+// choose a size from `$indent_list` and use with `padding` and `margin`
+// E.g.
+// padding: map-get($indent_list, s);  =>  padding: 15px;
+// margin: map-get($indent_list, xs);  =>  margin: 10px;
+//
+// if you need to keep the dependency, then you can use variables
+// E.g.
+// $some--indent_value: map-get($indent_list, xs);
+// padding: $some--indent_value;  =>  padding: 10px;
+// margin-bottom: $some--indent_value + $indent_xl;  =>  margin-bottom: 35px;
+// top: -$some--indent_value/2;  =>  top: -5px;
+//
+//
+// if you need to create indentation for one side
+//
+// DON'T USE `map-get()`
+// E.g. `margin-top: map-get($indent_list, xs);`
+//
+// USE only values for such cases
+// E.g. `margin-top: $indent_xs;`
+//

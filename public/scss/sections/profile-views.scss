@@ -1,0 +1,56 @@
+.profile-views {
+  border-bottom: 1px solid $border-color_primary;
+  padding-top: $indent_xs;
+  background: $color--light-gray-shade-1;
+  
+  @media #{$tablet-avg-and-up} { 
+    padding-top: $indent_s;
+  }
+  
+  .title {
+    margin-bottom: $indent_s;
+    text-align: center;
+    
+    @media #{$tablet-avg-and-up} { 
+      margin-bottom: $indent_xl;
+    }
+    
+    h4 {
+      font-size: $font_size--l;
+      line-height: $line-height_m;
+    }
+  }
+  
+  .list {    
+    padding: $indent_s 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 $indent_xl; 
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+    @media #{$tablet-avg-and-up} { 
+      padding: $indent_xl 0;
+    }
+    
+    &::-webkit-scrollbar {
+      display: none
+    }
+    
+    
+    
+    .person_hr {
+      @extend %card-in-slider;
+      flex-shrink: 0;
+      flex-basis: 180px;
+      
+      &:not(:last-child) {
+        margin-right: $indent_l;
+      }
+    }
+  }
+}

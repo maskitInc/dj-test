@@ -1,0 +1,44 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1,
+.h1 {
+  @extend %font-size_h1;
+}
+
+h2,
+.h2 {
+  @extend %font-size_h2;
+}
+
+h3,
+.h3 {
+  @extend %font-size_h3;
+}
+
+h4,
+.h4 {
+  @extend %font-size_h4;
+}
+
+h5,
+.h5 {
+  @extend %font-size_h5;
+}
+
+h6,
+.h6 {
+  @extend %font-size_h6;
+}
+
+p,
+.p {
+  @extend %font-size_p;  
+}
