@@ -1,0 +1,9 @@
+extends ../views/layout/base
+
+block content
+  h1 #{error.status}
+  h2 #{error.message}
+  pre #{error.stack}
+
+  a(href='/') Go back to the main page
+

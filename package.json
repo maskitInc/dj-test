@@ -1,0 +1,27 @@
+{
+  "name": "djinni-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "DEBUG=djinni-test:* npm start"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.4",
+    "bootstrap": "^5.1.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.0",
+    "font-awesome": "^4.7.0",
+    "http-errors": "~1.6.2",
+    "jquery": "^3.4.1",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.11.0",
+    "postcss-middleware": "^1.1.4",
+    "pug": "^3.0.2"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
