@@ -1,0 +1,160 @@
+include ./mixins/lists
+include ./mixins/persones
+include ./mixins/rating-row
+
+// create Color block in card
+mixin create-color-block-in-card
+  .card-color
+    .card-color-description
+      .h5.text-color_dark-gray-secondary #{attributes.colorDescription}
+        
+    .card-color-content&attributes({'class': attributes.textColor})
+      div&attributes({'class': 'card-color-thumb ' + attributes.thumbColor})
+      div.card-color-value #{attributes.colorValue}
+      div.card-color-name #{attributes.colorName}
+
+
+// create Form Input element block in card  &attributes({'class': attributes.formElementStyles})
+mixin create-form-element--input--block-in-card
+  each elementState in ['regular', 'active', 'disabled']
+    .card-form-element    
+      .card-form-element-description
+        .h5.text-color_dark-gray-secondary #{elementState}
+          
+      .card-form-element-content
+        .form-element.form-element--input.form-element--input_border-light&attributes({'class': 'form-element--input-state_' + elementState})
+          label(for=attributes.formElementSettings + '_' + elementState, class="form-label") #{attributes.formElementName}
+          if elementState == 'disabled'
+            input(disabled, id=attributes.formElementSettings + '_' + elementState, class="form-control", type=attributes.formElementType, placeholder=attributes.formElementPlaceholder)
+          else
+            input(id=attributes.formElementSettings + '_' + elementState, class="form-control", type=attributes.formElementType, placeholder=attributes.formElementPlaceholder)
+
+
+// create Form Select element block in card
+mixin create-form-element--select--block-in-card
+  each elementState in ['regular', 'active', 'disabled']
+    .card-form-element    
+      .card-form-element-description
+        .h5.text-color_dark-gray-secondary #{elementState}
+          
+      .card-form-element-content
+        .form-element.form-element--select.form-element--select_border-light&attributes({'class': 'form-element--select-state_' + elementState})
+          label(for=attributes.formElementSettings + '_' + elementState, class="form-label") #{attributes.formElementName}
+          if elementState == 'disabled'
+            select(disabled, id=attributes.formElementSettings + '_' + elementState, class="form-control", name=attributes.formElementName)
+              option(value='', selected) #{attributes.formElementPlaceholder}
+          else
+            select(id=attributes.formElementSettings + '_' + elementState, class="form-control", name=attributes.formElementName)
+              option(value='', selected) #{attributes.formElementPlaceholder}
+              option(value='0') 🇨🇳 China
+              option(value='1') 🇮🇳 India
+              option(value='2') 🇺🇸 United States
+
+
+// create Icon block in card with sizes pop up
+mixin create-icon-block-in-card
+  .card-icon&attributes({'class': ' ' + attributes.extraClass, 'data-action': 'open-close-sizes-menu'})
+    div.card-icon-item
+      if attributes.iconImageSrc != Null
+        div&attributes({'class': 'card-icon-thumb icon-size--image_l' + attributes.thumbColor})
+          img&attributes({'src': attributes.iconImageSrc, 'alt': attributes.iconDescription})
+      else
+        div&attributes({'class': 'card-icon-thumb icon-size--font_l' + attributes.thumbColor})
+          i&attributes({'class': attributes.iconFontClass})
+            
+      .card-icon-description
+        .card-icon-name.h5 #{attributes.iconDescription}
+        .h6.font-weight_normal.text-color_dark-gray-secondary #{attributes.iconFileName}
+        
+    .card-icon-sizes&attributes({'class': attributes.iconColor})
+      each iconSize in ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xl-wide']
+        div.card-icon-size
+          if attributes.iconImageSrc != Null
+            div&attributes({'class': 'card-icon-thumb ' + attributes.thumbColor + ' icon-size--image_' + iconSize, 'data-size-class': '.icon-size--image_' + iconSize})
+              img&attributes({'src': attributes.iconImageSrc, 'alt': attributes.iconDescription})
+          else
+            div&attributes({'class': 'card-icon-thumb ' + attributes.thumbColor + ' icon-size--font_' + iconSize, 'data-size-class': '.icon-size--font_' + iconSize})
+              i&attributes({'class': attributes.iconFontClass})
+              
+          div.card-icon-size-name #{iconSize}
+          
+          
+// create Button With Icon block in card with sizes pop up
+mixin create-button-with-icon-block-in-card
+  .card-button
+    .card-button-description
+      .h5.text-color_dark-gray-secondary #{attributes.btnStyleName}
+    
+    .card-button-item
+      .btn&attributes({'data-action': 'open-close-sizes-menu','class': 'btn-with-icon ' + attributes.btnStyles + ' ' + attributes.btnIconAlign + ' ' + attributes.btnWidth})
+        .btn--content
+          .btn-icon&attributes({'class': attributes.btnIconExtraClass})
+            if attributes.btnImageIcon != Null
+              img&attributes({'src': attributes.btnImageIcon, 'alt': attributes.btnImageIconDescription})
+            else
+              i&attributes({'class': attributes.btnFontIcon})
+                  
+          if attributes.btnName != Null
+            span.btn-value #{attributes.btnName}
+            
+    .card-button-sizes--container
+      .card-button-sizes
+        div.card-button-size        
+          .card-button-description
+            .h5 Responsive1
+            
+          .btn&attributes({'class': 'btn-with-icon ' + attributes.btnStyles + ' ' + attributes.btnIconAlign + ' ' + attributes.btnWidth})
+            .btn--content
+              .btn-icon&attributes({'class': attributes.btnIconExtraClass})
+                if attributes.btnImageIcon != Null
+                  img&attributes({'src': attributes.btnImageIcon, 'alt': attributes.btnImageIconDescription})
+                else
+                  i&attributes({'class': attributes.btnFontIcon})
+                      
+              if attributes.btnName != Null
+                span.btn-value #{attributes.btnName}
+                
+        each btnSize in attributes.btnSizes
+          .card-button-size-description 
+            .h5 #{btnSize}
+            
+          div.card-button-size
+            .btn&attributes({'class': 'btn-size_' + btnSize + ' ' + 'btn-with-icon ' + attributes.btnStyles + ' ' + attributes.btnIconAlign + ' ' + attributes.btnWidth})
+              .btn--content
+                .btn-icon&attributes({'class': attributes.btnIconExtraClass})
+                  if attributes.btnImageIcon != Null
+                    img&attributes({'src': attributes.btnImageIcon, 'alt': attributes.btnImageIconDescription})
+                  else
+                    i&attributes({'class': attributes.btnFontIcon})
+                        
+                if attributes.btnName != Null
+                  span.btn-value #{attributes.btnName}
+          
+          
+// create Button With Text in card with sizes pop up
+mixin create-button-block-in-card
+  .card-button
+    .card-button-description
+      .h5.text-color_dark-gray-secondary #{attributes.btnStyleName}
+      
+    .card-button-item
+      .btn&attributes({'data-action': 'open-close-sizes-menu', 'class': 'btn-text ' + attributes.btnStyles + ' ' + attributes.btnWidth})
+        .btn--content
+          span.btn-value #{attributes.btnName}
+          
+    .card-button-sizes--container
+      .card-button-sizes    
+        div.card-button-size
+          .card-button-description
+            .h5 Responsive
+          .btn&attributes({'class': 'btn-text ' + attributes.btnStyles + ' ' + attributes.btnWidth})
+            .btn--content
+              span.btn-value #{attributes.btnName}
+          
+        each btnSize in attributes.btnSizes
+          .card-button-size-description 
+            .h5 #{btnSize}
+          div.card-button-size
+            .btn&attributes({'class': 'btn-size_' + btnSize + ' ' + 'btn-text ' + attributes.btnStyles + ' ' + attributes.btnWidth})
+              .btn--content
+                span.btn-value #{attributes.btnName}
