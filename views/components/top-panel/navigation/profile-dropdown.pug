@@ -1,0 +1,23 @@
+.dropdown.d-flex
+  div.dropdown-toggle(id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false')
+  
+    +person--candidate&attributes({
+      personStyle: 'person_horizontal',
+      personName: 'Kubyshkin M.',
+      personNameAbr: 'KM',
+      personEmail: 'maskit.inc@gmail.com'
+    })
+    
+    i.dropdown-toggle--arrow.fa.fa-angle-down
+      
+  ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
+    li
+      a.dropdown-item(href='#') Налаштування
+    li
+      .form-check.form-switch
+        input.form-check-input(id='flexSwitchCheckDefault' type='checkbox')
+        label.form-check-label(for='flexSwitchCheckDefault') Кандидат / Рекрутер
+    li
+      hr.dropdown-divider
+    li
+      a.dropdown-item(href='#') Вийти

@@ -1,0 +1,48 @@
+- var vacancies = [{name: 'Lincoln Baptista', nameAbr: 'LB', position: 'IT recruiter at Playtech', messageReceived: 'false', photoExist: 'true', photo: 'images/photos/HR/2.png', date: '7 серпня 2021р.', jobTitle: 'Senior Game Designer / Producer', jobSalary: '~$4500', jobXP: '3 роки досвіду', jobENG: 'Intermediate', jobLocation: 'Київ', jobWorkingType: 'Office/Remote на ваш вибір', jobCompanyType: 'Product', jobDescription: 'ironSource a company with lots of ambitions and potential to transform AdTech products.'}, {name: 'Anika Philips', nameAbr: 'AP', position: 'Recruiter at FirstFive', messageReceived: 'true', photoExist: 'true', photo: 'images/photos/HR/3.png', date: '6 серпня 2021р.', jobTitle: 'Head of UX', jobSalary: '$3500-5000', jobXP: '3 роки досвіду', jobENG: '', jobLocation: '', jobWorkingType: 'Full Remote', jobCompanyType: 'Product', jobDescription: 'Head of UX в ТаксДом, продуктовую команду которая делает SaaS решение на рынке США. Remote, вилка 3500 - 5000$'}, {name: 'Jocelyn Mango', nameAbr: 'JM', position: 'IT Recruiter at Onseo', messageReceived: 'false', photoExist: 'false', photo: '', date: '6 серпня 2021р.', jobTitle: 'Lead/Senior UI/UX designer', jobSalary: '~$4500', jobXP: '5 років досвіду', jobENG: 'Upper Intermediate', jobLocation: 'Київ', jobWorkingType: 'Quarantine Remote', jobCompanyType: 'Product', jobDescription: 'As the Senior UX/UI Designer, you will be reporting to the Product Manager and be working closely with a multidisciplinary team (developers, marketers, data scientists, etc.) to create design solutions for a diversity of problems, scale and media across multiple platforms.'}, {name: 'Lydia Rhiel Madsen', nameAbr: 'LRM', position: 'Talent Sourcing Specialist at Innovecs', messageReceived: 'true', photoExist: 'true', photo: 'images/photos/HR/5.png', date: '5 серпня 2021р.', jobTitle: 'Senior User Interface Designer, Telehealth Solutions; Sign-on bonus', jobSalary: '~$4500', jobXP: '5 років досвіду', jobENG: 'Upper Intermediate', jobLocation: 'Київ, Харків, Львів, Дніпро, Одеса', jobWorkingType: 'Office/Remote на ваш вибір', jobCompanyType: '', jobDescription: 'Добрый день! Меня зовут Елена, я рекрутер DataArt. В офисах компании или на удаленной основе открыта вакансия Senior User Interface Designer. Буду рада обсудить детали. Обращайтесь :)'}, {name: 'Gustavo Baptista', nameAbr: 'GB', position: 'IT Recruiter at Onseo', messageReceived: 'false', photoExist: 'true', photo: 'images/photos/HR/6.png', date: '5 серпня 2021р.', jobTitle: 'Lead UX/UI Designer', jobSalary: '$2000-4000', jobXP: '3 роки досвіду', jobENG: '', jobLocation: 'Київ', jobWorkingType: 'Full Remote', jobCompanyType: 'Product', jobDescription: 'WannaPlay — белорусский разработчик и издатель мобильных игр. Сейчас мы в поисках крутого Lead UX/UI Designer на наши игровые проекты (гиперказуал, мидкор).'}];
+      
+each vacancie in vacancies    
+  
+  .vacancie
+    .container
+      .content
+        .vacancie--hr
+          +person--hr&attributes({
+            personMessage: false,
+            personStyle: 'person_horizontal',
+            photoExist: vacancie.photoExist,
+            personPhoto: vacancie.photo,
+            personName: vacancie.name,
+            personNameAbr: vacancie.nameAbr,
+            personPosition: vacancie.position
+          })
+          
+        .vacancie--info
+          .vacancie--info-content
+            .vacancie-title
+              h4 
+                a(href='') #{vacancie.jobTitle}
+                if vacancie.jobSalary != ''
+                  span #{vacancie.jobSalary}
+              .vacancie-requirements
+                i.fa.fa-exclamation-circle
+                ul
+                  if vacancie.jobXP != ''
+                    li #{vacancie.jobXP}
+                  if vacancie.jobENG != ''
+                    li #{vacancie.jobENG}
+            .vacancie-description
+              p #{vacancie.jobDescription}
+              .vacancie-job-infotags
+                ul
+                  if vacancie.jobCompanyType != ''
+                    li
+                      i.fa.fa-briefcase
+                      span #{vacancie.jobCompanyType}
+                  if vacancie.jobLocation != ''
+                    li
+                      i.fa.fa-map-marker
+                      span #{vacancie.jobLocation}
+                  if vacancie.jobWorkingType != ''
+                    li
+                      i.fa.fa-building
+                      span #{vacancie.jobWorkingType}
