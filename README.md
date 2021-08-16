@@ -1,4 +1,6 @@
 # djinni-test
+Demo:
+https://djinni-test.herokuapp.com/
 
 Install dependencies:
 ```
